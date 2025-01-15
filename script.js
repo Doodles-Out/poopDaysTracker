@@ -6,7 +6,7 @@
  * 1) Replace this with your deployed Google Apps Script URL.
  *    Example: "https://script.google.com/macros/s/AKfycbxy.../exec"
  */
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxe-d5tK8QrqNwaabY2-cladHr8rTHidZyjovjw1-QFZnMOwPKBt-rtC94A0lBx2LZ4JA/exec";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz0LpzzqxyZ5uozv8aZWuxL3986fJr_0I4mcQjewsCj-s0pu27LKKJyafeEEgMnDL4sgg/exec";
 
 // DOM references
 const poopDaysSpan    = document.getElementById('poopDays');
