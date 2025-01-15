@@ -1,13 +1,5 @@
-/****************************************
- * script.js
- ****************************************/
-
-/**
- * 1) Replace with your actual Make.com webhook URL if needed
- */
 const WEBHOOK_URL = "https://hook.us1.make.com/7s5ca42rsj2dxb6k88wmlp2e90unp0b5";
 
-// DOM references
 const poopDaysSpan = document.getElementById("poopDays");
 const lastPoopDaySpan = document.getElementById("lastPoopDay");
 
@@ -19,32 +11,16 @@ const removeButton = document.getElementById("removeButton");
 const allowBtn = document.getElementById("allowNotificationsBtn");
 const refreshBtn = document.getElementById("refreshButton");
 
-/****************************************
- * We'll store the last-known value from
- * Make/Google Sheets in 'poopDays'.
- * The "source of truth" is the sheet.
- ****************************************/
 let poopDays = 0;
 
-/****************************************
- * On load, fetch the current poop days
- ****************************************/
 window.addEventListener("load", () => {
   getPoopDays();
 });
 
-/****************************************
- * Refresh Button -> getPoopDays()
- ****************************************/
 refreshBtn.addEventListener("click", () => {
   getPoopDays();
 });
 
-/****************************************
- * Function: getPoopDays
- * - Tells Make.com scenario "please GET
- *   the poopDays from A2."
- ****************************************/
 async function getPoopDays() {
   try {
     const body = { action: "getPoopDays" };
@@ -70,11 +46,6 @@ async function getPoopDays() {
   }
 }
 
-/****************************************
- * Function: updatePoopDays
- * - Tells Make.com scenario "please set
- *   poopDays to newTotal in A2."
- ****************************************/
 async function updatePoopDays(newTotal) {
   try {
     const body = {
@@ -93,7 +64,6 @@ async function updatePoopDays(newTotal) {
     const data = await response.json();
     console.log("updatePoopDays response:", data);
 
-    // e.g., data might look like { "success": true, "poopDays": 12 }
     if (data.poopDays !== undefined) {
       poopDays = data.poopDays;
       updateUI();
@@ -103,10 +73,6 @@ async function updatePoopDays(newTotal) {
   }
 }
 
-/****************************************
- * updateUI: show the new poopDays on
- * screen, recalc last poop day
- ****************************************/
 function updateUI() {
   poopDaysSpan.textContent = poopDays;
 
@@ -120,9 +86,6 @@ function updateUI() {
   }
 }
 
-/****************************************
- * ADD Button
- ****************************************/
 addButton.addEventListener("click", async () => {
   const val = parseInt(addDaysInput.value, 10);
   if (Number.isNaN(val) || val <= 0) {
@@ -136,9 +99,6 @@ addButton.addEventListener("click", async () => {
   }
 });
 
-/****************************************
- * REMOVE Button
- ****************************************/
 removeButton.addEventListener("click", async () => {
   const val = parseInt(removeDaysInput.value, 10);
   if (Number.isNaN(val) || val <= 0) {
@@ -156,9 +116,6 @@ removeButton.addEventListener("click", async () => {
   }
 });
 
-/****************************************
- * ALLOW NOTIFICATIONS Button
- ****************************************/
 allowBtn.addEventListener("click", () => {
   if (!("Notification" in window)) {
     alert("Notifications are not supported on this device/browser.");
