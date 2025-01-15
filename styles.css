@@ -107,4 +107,22 @@ h1 {
   width: 100%;
   background-color: #ffffff;
   border-top: 1px solid #ddd;
-  padding
+  padding: 10px;
+  text-align: center;
+  z-index: 999; /* keep it above other elements */
+}
+
+.allow-btn-container button {
+  background-color: #f9b4cd; /* same pastel pink as your other buttons */
+  color: #fff;
+  font-size: 1em;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.allow-btn-container button:hover {
+  background-color: #e799b7; /* same hover color as your other buttons */
+}
