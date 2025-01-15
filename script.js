@@ -9,16 +9,20 @@ updateDisplay();
 
 // Add poop days
 document.getElementById('addButton').addEventListener('click', () => {
-  const addDays = parseInt(document.getElementById('addDays').value);
+  const addDaysInput = document.getElementById('addDays').value;
+  const addDays = parseInt(addDaysInput);
   if (addDays > 0 && confirm(`Are you sure you want to add ${addDays} poop day(s)?`)) {
     poopDays += addDays;
     saveAndUpdate();
+  } else if (isNaN(addDays) || addDays <= 0) {
+    alert('Please enter a valid number greater than 0 to add.');
   }
 });
 
 // Remove poop days
 document.getElementById('removeButton').addEventListener('click', () => {
-  const removeDays = parseInt(document.getElementById('removeDays').value);
+  const removeDaysInput = document.getElementById('removeDays').value;
+  const removeDays = parseInt(removeDaysInput);
   if (removeDays > 0) {
     if (poopDays >= removeDays && confirm(`Are you sure you want to remove ${removeDays} poop day(s)?`)) {
       poopDays -= removeDays;
@@ -26,6 +30,8 @@ document.getElementById('removeButton').addEventListener('click', () => {
     } else if (poopDays < removeDays) {
       alert('You don’t have enough poop days to remove!');
     }
+  } else if (isNaN(removeDays) || removeDays <= 0) {
+    alert('Please enter a valid number greater than 0 to remove.');
   }
 });
 
