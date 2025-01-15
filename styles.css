@@ -1,3 +1,4 @@
+/* Base styles */
 body {
   font-family: 'Arial', sans-serif;
   text-align: center;
@@ -7,9 +8,11 @@ body {
   color: #333;
 }
 
+/* Container for main content */
 .container {
+  width: 90%;
   max-width: 600px;
-  margin: 50px auto;
+  margin: 50px auto 80px auto; /* Bottom spacing for floating button */
   padding: 20px 30px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -17,16 +20,17 @@ body {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 1.8em;
   margin-bottom: 0.5em;
   color: #555;
 }
 
 p {
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin: 15px 0;
 }
 
+/* Input buttons area */
 .buttons {
   display: flex;
   flex-direction: column;
@@ -65,4 +69,41 @@ p {
 
 .input-group button:hover {
   background-color: #6db8e6;
+}
+
+/* Fixed bottom bar for "Allow Notifications" */
+.allow-btn-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  z-index: 999;
+}
+
+.allow-btn-container button {
+  background-color: #57c057;
+  color: #fff;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.allow-btn-container button:hover {
+  background-color: #48a648;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+  p {
+    font-size: 1em;
+  }
 }
