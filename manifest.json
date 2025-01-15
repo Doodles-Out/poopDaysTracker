@@ -1,6 +1,6 @@
 {
   "name": "Zach's Poop Days Tracker",
-  "short_name": "Poop Tracker",
+  "short_name": "PoopTracker",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
