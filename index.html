@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Zach's Poop Days Tracker</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
 </head>
 <body>
   <div class="container">
     <h1>Zach's Poop Days Tracker</h1>
-    <p id="count">Poop Days Left: <span id="poopDays">0</span></p>
-    <p id="lastDay">Last Poop Day: <span id="lastPoopDay">N/A</span></p>
+    
+    <p id="count">
+      Poop Days Left: <span id="poopDays">0</span>
+    </p>
+    <p id="lastDay">
+      Last Poop Day: <span id="lastPoopDay">N/A</span>
+    </p>
+
     <div class="buttons">
       <div class="input-group">
         <label for="addDays">Add Days:</label>
-        <input type="number" id="addDays" min="1" placeholder="Enter days">
+        <input type="number" id="addDays" min="1" placeholder="Enter days" />
         <button id="addButton">Add</button>
       </div>
+
       <div class="input-group">
         <label for="removeDays">Remove Days:</label>
-        <input type="number" id="removeDays" min="1" placeholder="Enter days">
+        <input type="number" id="removeDays" min="1" placeholder="Enter days" />
         <button id="removeButton">Remove</button>
       </div>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
