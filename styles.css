@@ -22,7 +22,7 @@ h1 {
   color: #555;
 }
 
-#count, #lastDay {
+p {
   font-size: 1.2em;
   margin: 15px 0;
 }
