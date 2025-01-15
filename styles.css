@@ -41,3 +41,37 @@ h1 {
 .buttons button:hover {
   background-color: #6db8e6;
 }
+
+.input-group {
+  margin: 15px 0;
+}
+
+.input-group label {
+  margin-right: 10px;
+  font-size: 1em;
+  color: #555;
+}
+
+.input-group input {
+  padding: 8px;
+  font-size: 1em;
+  width: 100px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-group button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #8ed1fc;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.input-group button:hover {
+  background-color: #6db8e6;
+}
